@@ -20,7 +20,7 @@ shinyUI(fluidPage(
       
       checkboxGroupInput("checkGroup", label = h3("Variables"), 
                          choices = list("sex" = "sex", "party" = "party", "race" = "race"),
-                         selected = 1),
+                         selected = "sex"),
       
       numericInput("obs", "Number of observations to view:", 10),
       

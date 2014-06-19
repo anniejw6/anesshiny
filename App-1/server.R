@@ -18,9 +18,7 @@ shinyServer(function(input, output) {
   
   # You can access the values of the widget (as a vector)
   # with input$checkGroup, e.g.
-   checkboxGroupInput <- reactive({
-     switch(input$checkGroup)
-   })
+   checkInput <- reactive(input$checkGroup)
   
   # The output$caption is computed based on a reactive expression that
   # returns input$caption. When the user changes the "caption" field:
@@ -40,7 +38,8 @@ shinyServer(function(input, output) {
   # (i.e. whenever the input$dataset changes)
   output$summary <- renderPrint({
     dataset <- datasetInput()
-    var <- checkboxGroupInput()
+    var <- checkInput()
+    print(var)
   })
   
   # The output$view depends on both the databaseInput reactive expression
